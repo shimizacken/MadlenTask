@@ -66,10 +66,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="images\siteElements\link-new-tab.png" />
-    <Content Include="images\siteElements\no-image.png" />
-    <Content Include="images\siteElements\ring.gif" />
-    <Content Include="js\paging.js" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -84,21 +80,16 @@
     <Content Include="js\angular.min.js" />
     <Content Include="Web.config" />
     <Content Include="webApps\app.js" />
-    <Content Include="webApps\modules\books\controllers\searchResultsController.js" />
-    <Content Include="webApps\modules\books\directives\bookThumbnail.js" />
-    <Content Include="webApps\modules\books\directives\bookInfoLink.js" />
-    <Content Include="webApps\modules\books\directives\bookDescription.js" />
-    <Content Include="webApps\modules\books\services\googleBooksModelService.js" />
-    <Content Include="webApps\modules\books\templates\bookDescriptionTemplate.html" />
-    <Content Include="webApps\modules\core\directives\loadingIcon.js" />
-    <Content Include="webApps\modules\core\directives\hitButton.js" />
-    <Content Include="webApps\modules\books\filters\bookDetail.js" />
-    <Content Include="webApps\modules\books\services\googleBooksAPIService.js" />
-    <Content Include="webApps\modules\books\services\googleBooksValue.js" />
-    <Content Include="webApps\modules\core\filters\orderObjectBy.js" />
-    <Content Include="webApps\modules\core\services\orderObjectByService.js" />
-    <Content Include="webApps\modules\core\services\JSONPService.js" />
-    <Content Include="webApps\modules\books\templates\bookSearchResultTemplate.html" />
+    <Content Include="webApps\modules\controllers\addEmployeeController.js" />
+    <Content Include="webApps\modules\controllers\employeesController.js" />
+    <Content Include="webApps\modules\controllers\tabsController.js" />
+    <Content Include="webApps\modules\directives\tabs.js" />
+    <Content Include="webApps\modules\filters\birthday.js" />
+    <Content Include="webApps\modules\services\employeesRepositoryService.js" />
+    <Content Include="webApps\modules\services\employeeBirthdayValidationService.js" />
+    <Content Include="webApps\modules\templates\addEmployeeTabTemplate.html" />
+    <Content Include="webApps\modules\templates\employeeTabTemplate.html" />
+    <Content Include="webApps\modules\templates\tabTemplate.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
