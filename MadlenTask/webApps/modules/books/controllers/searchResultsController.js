@@ -15,7 +15,7 @@
                     $scope.authors = [];
                     $scope.searchOptions = googleBooksValue.searchOptions;
                     $scope.maxResults = googleBooksValue.maxResults;
-                    $scope.bookSearchResultTemplate = "webApps/modules/books/templates/bookSearchResultTemplate.html";
+                    $scope.bookSearchResultTemplate = "webApps/modules/books/templates/booksearchresulttemplate.html";
                     $scope.sortTypes = googleBooksValue.sortTypes;
 
                     $scope.search = function () {

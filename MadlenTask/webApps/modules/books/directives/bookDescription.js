@@ -5,7 +5,7 @@
         /// <summary>directive for dispalying book description.</summary>
 
         return {
-            templateUrl: "webApps/modules/books/templates/bookDescriptionTemplate.html",
+            templateUrl: "webApps/modules/books/templates/bookdescriptiontemplate.html",
             replace: true,
             scope: {
                 description: "=",
