@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>The Book Shop</title>
+    <meta charset="utf-8" />
+    <link href="css/main.css" rel="stylesheet" />
+    <script src="js/angular.min.js"></script>
+    <script src="js/paging.js"></script>
+    <script src="webApps/app.js"></script>
+    <script src="webApps/modules/books/controllers/searchResultsController.js"></script>
+    <script src="webApps/modules/books/services/googleBooksAPIService.js"></script>
+    <script src="webApps/modules/books/services/googleBooksValue.js"></script>
+    <script src="webApps/modules/core/services/jsonpService.js"></script>
+    <script src="webApps/modules/core/directives/hitButton.js"></script>
+    <script src="webApps/modules/core/directives/loadingIcon.js"></script>
+    <script src="webApps/modules/books/filters/bookDetail.js"></script>
+    <script src="webApps/modules/core/filters/orderObjectBy.js"></script>
+    <script src="webApps/modules/books/services/googleBooksModelService.js"></script>
+    <script src="webApps/modules/books/directives/bookDescription.js"></script>
+    <script src="webApps/modules/books/directives/bookInfoLink.js"></script>
+    <script src="webApps/modules/books/directives/bookThumbnail.js"></script>
+    <script src="webApps/modules/core/services/orderObjectByService.js"></script>
+</head>
+<body ng-app="mainApp">
+    <div ng-controller="Books.searchResultsController" class="search-container">
+        <h1>TheBookSearcher</h1>
+        <input hit-button type="search" ng-model="query" class="search-input" placeholder="Hey! Type here something..." />
+        <button ng-click="search()" class="search-button">Search book</button>
+        <label class="search-message" ng-show="showSearchMessage">{{searchMessage}}</label>
+        <div class="search-options" ng-init="searchOption = searchOptions.title">
+            Search in: <input type="radio" id="rdbTitle" ng-model="searchOption" name="searchOptions" value="{{searchOptions.title}}" /><label for="rdbTitle"><span><span></span></span>Title</label>
+            <input type="radio" id="rdbSubtitle" ng-model="searchOption" name="searchOptions" value="{{searchOptions.subtitle}}" /> <label for="rdbSubtitle"><span><span></span></span>Subtitle</label>
+            <input type="radio" id="rdbAuthor" ng-model="searchOption" name="searchOptions" value="{{searchOptions.author}}" /> <label for="rdbAuthor"><span><span></span></span>Author</label>
+        </div>
+        <div class="result-statistics" ng-show="showStatistics">
+            Total items: {{totalItems}}, Avarage pages: {{totalItems / maxResults | number:0}}
+        </div>
+        <div class="sort-container" ng-show="showSorter">
+            Sort by: <a href="" ng-click="sortResult(sortTypes.title)">Title</a> <a href="" ng-click="sortResult(sortTypes.subTitle)">Subtitle</a> <a href="" ng-click="sortResult(sortTypes.description)">Description</a>
+        </div>
+        <div ng-include="bookSearchResultTemplate"></div>
+        <loading-icon class="loading-container"></loading-icon>
+        <div paging class="pager" ng-show="showPager"
+             page="1"
+             page-size="25"
+             total="totalItems">
+        </div>
+    </div>
+</body>
+</html>

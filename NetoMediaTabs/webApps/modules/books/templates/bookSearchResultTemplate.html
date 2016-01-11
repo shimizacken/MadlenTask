@@ -1,0 +1,21 @@
+﻿<ul>
+    <li ng-repeat="book in books">
+        <book-thumbnail thumbnail='book.smallThumbnail'></book-thumbnail>
+        <div class="book-details">
+            <label class="book-title">{{book.title}}</label>
+            <label class="book-subtitle">
+                {{book.subTitle}}
+            </label>
+            <label class="book-publisher">
+                Publisher: {{book.publisher | bookDetail}}
+            </label>
+            <label class="book-publisher">
+                Author: <label ng-repeat="author in book.authors | bookDetail">
+                    {{author}}
+                </label>
+            </label>
+            <book-description description="book.description"></book-description>
+            <book-info-link info-link="book.infoLink"></book-info-link>
+        </div>
+    </li>
+</ul>
